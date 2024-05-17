@@ -1,33 +1,26 @@
 package models;
 
-import mediatorInterfaces.Mediator;
-
 public class Telefono {
     private boolean musicaOn = false;
-    private Mediator mediator;
+    private Radio radio;
 
-    public void setMediator(Mediator mediator) {
-        this.mediator = mediator;
+    public void setRadio(Radio radio) {
+        this.radio = radio;
     }
 
-    public Telefono(Mediator mediator) {
-        this.mediator = mediator;
+    public void recibeLlamada(){
+        radio.apaga();
     }
 
-    public void enciendeMusica() {
+    public void enciendeMusica(){
         musicaOn = true;
     }
 
-    public void apagaMusica() {
+    public void apagaMusica(){
         musicaOn = false;
     }
 
-    public boolean musicaEncendida() {
+    public boolean musicaEncendida(){
         return musicaOn;
-    }
-
-    // Este método se llama cuando el teléfono suena
-    public void sonar() {
-        mediator.sonarTelefono();
     }
 }

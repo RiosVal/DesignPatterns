@@ -1,27 +1,21 @@
 package models;
 
-import mediatorInterfaces.Mediator;
-
 public class Radio {
+
     private boolean encendida = false;
-    private Mediator mediator;
+    private Telefono telefono;
 
-    public Radio(Mediator mediator) {
-        this.mediator = mediator;
-    }
-
-    public void setMediator(Mediator mediator) {
-        this.mediator = mediator;
+    public void setTelefono(Telefono telefono) {
+        this.telefono = telefono;
     }
 
     public void enciende() {
         encendida = true;
-        mediator.encenderRadio();
+        telefono.apagaMusica();
     }
 
     public void apaga() {
         encendida = false;
-        mediator.apagarRadio();
     }
 
     public boolean encendida() {
