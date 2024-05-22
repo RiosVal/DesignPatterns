@@ -1,17 +1,15 @@
 package models;
 
 public class Radio {
-
+    private Mediator mediator;
     private boolean encendida = false;
-    private Telefono telefono;
 
-    public void setTelefono(Telefono telefono) {
-        this.telefono = telefono;
+    public void setMediator(Mediator mediator) {
+        this.mediator = mediator;
     }
 
     public void enciende() {
         encendida = true;
-        telefono.apagaMusica();
     }
 
     public void apaga() {
@@ -22,3 +20,4 @@ public class Radio {
         return encendida;
     }
 }
+

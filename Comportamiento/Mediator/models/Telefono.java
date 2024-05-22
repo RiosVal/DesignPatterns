@@ -1,26 +1,26 @@
 package models;
 
 public class Telefono {
+    private Mediator mediator;
     private boolean musicaOn = false;
-    private Radio radio;
 
-    public void setRadio(Radio radio) {
-        this.radio = radio;
+    public void setMediator(Mediator mediator) {
+        this.mediator = mediator;
     }
 
-    public void recibeLlamada(){
-        radio.apaga();
+    public void recibeLlamada() {
+        mediator.recibeLlamada();
     }
 
-    public void enciendeMusica(){
+    public void enciendeMusica() {
         musicaOn = true;
     }
 
-    public void apagaMusica(){
+    public void apagaMusica() {
         musicaOn = false;
     }
 
-    public boolean musicaEncendida(){
+    public boolean musicaEncendida() {
         return musicaOn;
     }
 }

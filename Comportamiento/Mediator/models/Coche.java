@@ -1,24 +1,17 @@
 package models;
 
 public class Coche {
+    private Mediator mediator;
 
-    private Telefono telefono;
-    private Radio radio;
-
-    public void setTelefono(Telefono telefono) {
-        this.telefono = telefono;
-    }
-
-    public void setRadio(Radio radio) {
-        this.radio = radio;
+    public void setMediator(Mediator mediator) {
+        this.mediator = mediator;
     }
 
     public void enciende() {
-        radio.enciende();
-        telefono.apagaMusica();
+        mediator.encenderRadio();
     }
 
     public void apaga() {
-        radio.apaga();
+        mediator.apagarRadio();
     }
 }
